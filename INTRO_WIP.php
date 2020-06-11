@@ -41,7 +41,7 @@
    
   //  mysql_close($conn);
 ?> -->
-<form method="post" action="Design.php">
+<form method="post" action="Engineering.php">
   Project ID:<br>
   <input type="number" name="projectID" id="projectID">
   <br>
@@ -49,7 +49,7 @@
     <option value="experimental">Experimental</option>
     <option value="engineering">Engineering</option>
     </select>
-      <button type="submit">Submit</button> </form>
+      <button type="submit">Submit</button></form>
     
 </form>
 

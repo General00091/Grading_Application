@@ -8,19 +8,19 @@ table, th, td {
 </style>
 </head>
 <body>
-    
-    <?php
+
+<h1 style="font-size:300%;">
+<h1 style="text-align:center;">Judging Criteria - Design Projects</h1>   
+<table style="width:100%">
+<?php
 
 $ProjectID = $_REQUEST['projectID'];
 
 echo("projectID: " . $ProjectID);
 ?>
-
-<h1 style="font-size:300%;">
-<h1 style="text-align:center;">Judging Criteria - Design Projects</h1>   
-<table style="width:100%">
+<br>
 Hello <?php echo $_POST["projectID"]; ?>!<br>
-    <form action="Intro.php"> 
+    <form action="INTRO_WIP.php"> 
     <tr>
         <th>OVERALL IMPRESSION OF THE DESIGN PROCESS \\ 50 POINTS</th>
         
@@ -340,11 +340,11 @@ project. Minimum 1 page.</td>
         <input type="radio" name="Visual Design" value="3" checked> 3<br></td>
     </tr>
 </table>
-        <button type="submit">Submit</button>
-    
-    </form>
-     
+<br>
+        <button type="submit">Submit</button></form>
 
+    </form> 
+    
 </body>
 </html>
 
