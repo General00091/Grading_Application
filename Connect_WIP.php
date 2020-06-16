@@ -1,6 +1,6 @@
 <?php
 
-$projectID = filter_input(INPUT_POST,'projectID');
+/*$projectID = filter_input(INPUT_POST,'projectID');
 $nameofjudge =filter_input(INPUT_POST,'nameofjudge');
 $typeofrubric =filter_input(INPUT_POST, 'typeofrubric');
 if (!empty($projectID)){
@@ -12,9 +12,7 @@ $dbname = "grader";
 
 $conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
 
-if (mysqli_connect_error()){
-    die('ConnectError ('. mysqli_connect_errno().')'
-    .mysqli_connect_error());
+
 
 }
 else{
@@ -40,3 +38,5 @@ else{
     die();
 
 }
+*/
+?>
