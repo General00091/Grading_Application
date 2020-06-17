@@ -12,8 +12,40 @@
     </style>
   </head>
 <body>
- 
- <?php
+<?php
+ $host = 'localhost';
+ $user = 'root';
+ $pass = '';
+ $db = 'presenters';
+ $connection = mysqli_connect($host, $user, $pass, $db);
+ $projectNum = mysqli_real_escape_string($connection, $_REQUEST['projectnumber']);
+
+   if (!$connection) {
+      die("Connection failed: " . mysqli_connect_error());
+    }
+   $previousScore = "SELECT totalScore FROM table1 WHERE projectID = '$projectNum'";
+   $query = mysqli_query($connection, $previousScore);
+   $previousNum;
+    if (mysqli_num_rows($query) > 0) {
+        while($data = mysqli_fetch_assoc($query)) {
+          $previousNum = $data['totalScore'];
+        }
+    } else {
+      echo "0 results";
+    }
+
+
+   $judged = "SELECT timesJudged FROM table1 WHERE projectID = '$projectNum'";
+   $result = mysqli_query($connection, $judged);
+   $numJudges;
+    if (mysqli_num_rows($result) > 0) {
+        while($data = mysqli_fetch_assoc($result)) {
+          $numJudges = $data['timesJudged'];
+        }
+    } else {
+      echo "0 results";
+    }
+
    $num1 = $_REQUEST['designA'];
    $int1 = (int)$num1;
 
@@ -69,9 +101,27 @@
    $int18 = (int)$num18;
 
    $totalscore = $int1 + $int2 + $int3 + $int4 + $int5 + $int6 + $int7 + $int8 + $int9 + $int10 + $int11 + $int12 + $int13 + $int14 + $int15 + $int16 + $int17 + $int18;
-   echo $totalscore;
-   
+   $finalscore = (int)$previousNum + $totalscore;
+   $totalJudges = (int)$numJudges + 1;
+
+   $fs = "UPDATE table1 SET totalScore='$finalscore' WHERE projectID=$projectNum";
+   $fj = "UPDATE table1 SET timesJudged='$totalJudges' WHERE projectID=$projectNum";
+
+   if ($connection->query($fs) === TRUE) {
+    echo "Record updated successfully";
+  } else {
+    echo "Error updating record: " . $connection->error;
+  }
+
+  if ($connection->query($fj) === TRUE) {
+    echo "Record updated successfully";
+  } else {
+    echo "Error updating record: " . $connection->error;
+  }
+  
+  $connection->close();
   ?>
+
 <form method="POST" action="Engineering.php">
   Project ID:<br>
   <input type="number" name="projectID" required>

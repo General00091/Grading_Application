@@ -361,6 +361,9 @@ project. Minimum 1 page.</td>
         <td> 
         <input type="radio" name="visualD" value="3" required> 3<br></td>
     </tr>
+
+        <input type="hidden" name="projectnumber" value="<?php echo $ProjectID?>"> 
+
 </table>
 <br>
         
