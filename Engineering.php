@@ -40,7 +40,7 @@ echo("project ID: " . $ProjectID);
     
     mysqli_close($connection);
 ?>
-<form method="POST" action="INTRO_WIP.php"> 
+<form method="POST" action="INTRO.php"> 
     <tr>
         <th>OVERALL IMPRESSION OF THE DESIGN PROCESS \\ 50 POINTS</th>
         
@@ -367,10 +367,8 @@ project. Minimum 1 page.</td>
 </table>
 <br>
         
-<button type="submit">Submit</button></form>
+<input type="submit" name="engineering" value="Submit"></form>
 
-    </form> 
-    
 </body>
 </html>
 

@@ -12,8 +12,14 @@ table, th, td {
 <h1 style="font-size:300%;">
 <h1 style="text-align:center;">Judging Criteria - Experimental Projects</h1>   
 <table style="width:100%">
-<?php
 
+<?php
+$host = 'localhost';
+$user = 'root';
+$pass = '';
+$db = 'presenters';
+$connection = mysqli_connect($host, $user, $pass, $db);
+$ProjectID = mysqli_real_escape_string($connection, $_REQUEST['projectID']);
 $ProjectID = $_REQUEST['projectID'];
 
 echo("projectID: " . $ProjectID);
@@ -37,7 +43,7 @@ echo("projectID: " . $ProjectID);
     mysqli_close($connection);
 ?>
 
-    <form method="POST" action="INTRO_WIP.php"> 
+    <form method="POST" action="INTRO.php"> 
     <tr>
         <th>OVERALL IMPRESSION OF THE PROJECT \\ 50 POINTS</th>
         
@@ -233,7 +239,7 @@ project. Minimum 1 page.</td>
         <td> 
         <input type="radio" name="research" value="3" required> 3<br></td>
         <td>
-        <input type="radio" name="reasearch" value="4" required> 4<br></td>
+        <input type="radio" name="research" value="4" required> 4<br></td>
     </tr>
     <tr>
     	<td>Material List and Procedure</td>
@@ -369,11 +375,11 @@ by student and are not copied from the internet. Photos do not show faces of peo
 		<input type="radio" name="artistic" value="5" required> 5<br>
         </td>
     </tr>
+
+        <input type="hidden" name="projectnumber" value="<?php echo $ProjectID?>"> 
 </table>
 <br>
-        <button type="submit">Submit</button></form>
-
-    </form>
+    <input type="submit" name="experimental" value="Submit"></form>
 
 </body>
 </html>
