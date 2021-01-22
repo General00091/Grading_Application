@@ -37,7 +37,7 @@ echo("projectID: " . $ProjectID);
             echo "Hello " . $row["fName"]. " " . $row["lName"]."!<br>";
         }
     } else {
-      echo "0 results";
+      echo "Number not assigned";
     }
     
     mysqli_close($connection);

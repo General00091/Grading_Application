@@ -12,6 +12,7 @@ table, th, td {
 <h1 style="font-size:300%;">
 <h1 style="text-align:center;">Judging Criteria - Design Projects</h1>   
 <table style="width:100%">
+
 <?php
  $host = 'localhost';
  $user = 'root';
@@ -19,8 +20,9 @@ table, th, td {
  $db = 'presenters';
  $connection = mysqli_connect($host, $user, $pass, $db);
  $ProjectID = mysqli_real_escape_string($connection, $_REQUEST['projectID']);
+ $ProjectID = $_REQUEST['projectID'];
 
-echo("project ID: " . $ProjectID);
+echo("projectID: " . $ProjectID);
 ?>
 <br>
 <?php 
@@ -35,12 +37,13 @@ echo("project ID: " . $ProjectID);
             echo "Hello " . $row["fName"]. " " . $row["lName"]."!<br>";
         }
     } else {
-      echo "0 results";
+      echo "Number not assigned";
     }
     
     mysqli_close($connection);
 ?>
-<form method="POST" action="INTRO.php"> 
+
+    <form method="POST" action="INTRO.php"> 
     <tr>
         <th>OVERALL IMPRESSION OF THE DESIGN PROCESS \\ 50 POINTS</th>
         
