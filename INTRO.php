@@ -212,7 +212,7 @@ if ($_POST['engineering'] && (int)$numJudges < 3) {
     <option value="Experimental">Experimental</option>
     <option value="Engineering">Engineering</option>
     </select>
-    <button type="submit">Submit</button> 
+    <button type="submit">Submit</button>
   -->
     <button type="submit" formaction="Engineering.php">Submit to Engineering/Design page</button>
     <button type="submit" formaction="Experimental.php">Submit to Experimental page</button>

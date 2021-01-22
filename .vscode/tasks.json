@@ -1,8 +1,27 @@
 {
     "version": "2.0.0",
-    "command": "chrome",
-    "windows": {
-        "command": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
-    },
-    "args": ["localhost\\${workspaceRootFolderName}\\${fileBasename}"]
+    "tasks": [
+        {
+            "label": "Live Updates",
+            "command": "chrome",
+            "windows": {
+                "command": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+            },
+            "args": [
+                "localhost\\${workspaceRootFolderName}\\${fileBasename}"
+            ]
+        },
+        {
+            "label": "Update Files",
+            "command": "xcopy",
+            "type": "shell",
+            "args": [
+                "D:\\Coding Project\\Grading_Application",
+                "D:\\xampp\\htdocs\\Grading_Application\\",
+                "/y"
+            ],
+            "problemMatcher": []
+        }
+    ]
+    
 }
