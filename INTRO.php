@@ -206,12 +206,14 @@ if ($_POST['engineering'] && (int)$numJudges < 3) {
   <input type="number" name="projectID" required>
   <br>
   Type Of Project: <br>
-  <!--<select name="typeOfProject" required>
+  <!--
+    <select name="typeOfProject" required>
     <option selected hidden value="">Select Rubric</option>
     <option value="Experimental">Experimental</option>
     <option value="Engineering">Engineering</option>
     </select>
-    <button type="submit">Submit</button> -->
+    <button type="submit">Submit</button> 
+  -->
     <button type="submit" formaction="Engineering.php">Submit to Engineering/Design page</button>
     <button type="submit" formaction="Experimental.php">Submit to Experimental page</button>
 </form>
