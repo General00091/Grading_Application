@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Form.site</title>
+    <title>Project001.site</title>
     <style>
     form {padding-top: 120px;
     text-align: center;
@@ -9,6 +9,9 @@
     input{width: 250px;
       height: 40px;
       font-size: 30px}
+    body {
+      background-color: #6C8255;
+    }
     </style>
   </head>
 <body>
@@ -17,14 +20,14 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$db = 'presenters';
+$db = 'grading application';
 $connection = mysqli_connect($host, $user, $pass, $db);
 $projectNum = mysqli_real_escape_string($connection, $_REQUEST['projectnumber']);
 if (!$connection) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$previousScore = "SELECT totalScore FROM table1 WHERE projectID = '$projectNum'";
+$previousScore = "SELECT totalScore FROM presenters WHERE projectID = '$projectNum'";
   $query = mysqli_query($connection, $previousScore);
   $previousNum;
    if (mysqli_num_rows($query) > 0) {
@@ -32,10 +35,10 @@ $previousScore = "SELECT totalScore FROM table1 WHERE projectID = '$projectNum'"
          $previousNum = $data['totalScore'];
        }
    } else {
-     echo "0 results";
+     echo "0 results<br>";
    }
 
-  $judged = "SELECT timesJudged FROM table1 WHERE projectID = '$projectNum'";
+  $judged = "SELECT timesJudged FROM presenters WHERE projectID = '$projectNum'";
   $result = mysqli_query($connection, $judged);
   $numJudges;
    if (mysqli_num_rows($result) > 0) {
@@ -43,7 +46,7 @@ $previousScore = "SELECT totalScore FROM table1 WHERE projectID = '$projectNum'"
          $numJudges = $data['timesJudged'];
        }
    } else {
-     echo "0 results";
+     echo "0 results<br>";
    }
 
 if ($_POST['engineering'] && (int)$numJudges < 3) {
@@ -105,17 +108,17 @@ if ($_POST['engineering'] && (int)$numJudges < 3) {
     $finalscore = (int)$previousNum + $totalscore;
     $totalJudges = (int)$numJudges + 1;
     
-    $fs = "UPDATE table1 SET totalScore='$finalscore' WHERE projectID=$projectNum";
-    $fj = "UPDATE table1 SET timesJudged='$totalJudges' WHERE projectID=$projectNum";
+    $fs = "UPDATE presenters SET totalScore='$finalscore' WHERE projectID=$projectNum";
+    $fj = "UPDATE presenters SET timesJudged='$totalJudges' WHERE projectID=$projectNum";
     
     if ($connection->query($fs) === TRUE) {
-     echo "Record updated successfully ";
+     echo "Record updated successfully<br>";
     } else {
      echo "Error updating record: " . $connection->error;
     }
     
     if ($connection->query($fj) === TRUE) {
-     echo "Record updated successfully ";
+     echo "Record updated successfully<br>";
     } else {
      echo "Error updating record: " . $connection->error;
     }
@@ -182,17 +185,17 @@ if ($_POST['engineering'] && (int)$numJudges < 3) {
     $finalscore = (int)$previousNum + $totalscore;
     $totalJudges = (int)$numJudges + 1;
     
-    $fs = "UPDATE table1 SET totalScore='$finalscore' WHERE projectID=$projectNum";
-    $fj = "UPDATE table1 SET timesJudged='$totalJudges' WHERE projectID=$projectNum";
+    $fs = "UPDATE presenters SET totalScore='$finalscore' WHERE projectID=$projectNum";
+    $fj = "UPDATE presenters SET timesJudged='$totalJudges' WHERE projectID=$projectNum";
     
     if ($connection->query($fs) === TRUE) {
-     echo "Record updated successfully ";
+     echo "Record updated successfully<br>";
     } else {
      echo "Error updating record: " . $connection->error;
     }
     
     if ($connection->query($fj) === TRUE) {
-     echo "Record updated successfully ";
+     echo "Record updated successfully<br>";
     } else {
      echo "Error updating record: " . $connection->error;
     }
@@ -200,11 +203,13 @@ if ($_POST['engineering'] && (int)$numJudges < 3) {
     $connection->close();
 }
 ?>
+<h1 style="font-size:300%;">
+<h1 style="text-align:center;">HSA McKinley Park Science Fair Grader</h1>
 
 <form method="POST" action="Engineering.php" action>
   Project ID:<br>
   <input type="number" name="projectID" required>
-  <br>
+  <br><br>
   Type Of Project: <br>
   <!--
     <select name="typeOfProject" required>

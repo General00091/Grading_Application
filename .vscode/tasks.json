@@ -5,11 +5,12 @@
             "label": "Live Updates",
             "command": "chrome",
             "windows": {
-                "command": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+                "command": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
             },
             "args": [
                 "localhost\\${workspaceRootFolderName}\\${fileBasename}"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
             "label": "Update Files",

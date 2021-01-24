@@ -10,14 +10,14 @@ table, th, td {
 <body>
 
 <h1 style="font-size:300%;">
-<h1 style="text-align:center;">Judging Criteria - Design Projects</h1>   
+<h1 style="text-align:center;">Judging Criteria - Engineering/Design Project</h1>   
 <table style="width:100%">
 
 <?php
  $host = 'localhost';
  $user = 'root';
  $pass = '';
- $db = 'presenters';
+ $db = 'grading application';
  $connection = mysqli_connect($host, $user, $pass, $db);
  $ProjectID = mysqli_real_escape_string($connection, $_REQUEST['projectID']);
  $ProjectID = $_REQUEST['projectID'];
@@ -30,7 +30,7 @@ echo("projectID: " . $ProjectID);
     if (!$connection) {
         die("Connection failed: " . mysqli_connect_error());
       }
-    $sql = "SELECT fName, lName FROM table1 WHERE projectID = '$ProjectID'";
+    $sql = "SELECT fName, lName FROM presenters WHERE projectID = '$ProjectID'";
     $query = mysqli_query($connection, $sql);
     if (mysqli_num_rows($query) > 0) {
         while($row = mysqli_fetch_assoc($query)) {
@@ -340,7 +340,7 @@ project. Minimum 1 page.</td>
     </tr>
     <tr>
     	<td>Reference</td>
-        <td>3 sources are listed(Google, Wikipedia or Science Buddies are not acceptable).</td>
+        <td>3 sources are listed (Google, Wikipedia or Science Buddies are not acceptable).</td>
         <td>
 		<input type="radio" name="reference" value="0" required> 0<br>
         <td> 
