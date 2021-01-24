@@ -10,7 +10,7 @@
       height: 40px;
       font-size: 30px}
     body {
-      background-color: #6C8255;
+      background-color: #B8DDD6;
     }
     </style>
   </head>
