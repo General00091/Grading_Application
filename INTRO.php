@@ -10,7 +10,8 @@
       height: 40px;
       font-size: 30px}
     body {
-      background-color: #B8DDD6;
+      font-family: Arial, sans-serif;
+      background-color: #E0EBE5;
     }
     </style>
   </head>

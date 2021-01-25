@@ -2,9 +2,31 @@
 <html>
 <head>
 <style>
-table, th, td {
-      border: 2px solid black;
+body {
+        font-family: Arial, sans-serif;
+        background-color: white; 
+    }
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #6E968E;
+}
+
+tr:nth-child(even){background-color: #B8DDD6}
+tr:hover {background-color: #6CBCAD;}
+
+th {
+    background-color: #275070;
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
 </style>
 </head>
 <body>
@@ -37,16 +59,16 @@ echo("projectID: " . $ProjectID);
             echo "Hello " . $row["fName"]. " " . $row["lName"]."!<br>";
         }
     } else {
-      echo "Number not assigned";
+      echo "Number not assigned\n";
     }
     
     mysqli_close($connection);
 ?>
-
+    
     <form method="POST" action="INTRO.php"> 
     <tr>
         <th>OVERALL IMPRESSION OF THE PROJECT \\ 50 POINTS</th>
-        
+    </tr>
     <tr>
         <td>Scientific Approach</td>
         <td> Well defined problem was solved using scientific principles. 
@@ -194,6 +216,7 @@ his/her subject. Not relied heavily on note cards or the board.</td>
  </td>
     
 </table>
+<br>
 <table style="width:100%">
     <tr>
         <th>DISPLAY \\ 50 POINTS</th>

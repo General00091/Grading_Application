@@ -2,9 +2,31 @@
 <html>
 <head>
 <style>
-table, th, td {
-      border: 2px solid black;
+body {
+        font-family: Arial, sans-serif; 
+        background-color: white;
+    }
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #6E968E;
+}
+
+tr:nth-child(even){background-color: #B8DDD6}
+tr:hover {background-color: #6CBCAD;}
+
+th {
+    background-color: #275070;
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
 </style>
 </head>
 <body>
@@ -47,6 +69,7 @@ echo("projectID: " . $ProjectID);
     <tr>
         <th>OVERALL IMPRESSION OF THE DESIGN PROCESS \\ 50 POINTS</th>
         
+    </tr>
     <tr>
         <td>Design Approach Overall</td>
         <td> Has identified a need or real world problem. 
@@ -198,6 +221,7 @@ his/her subject. Not relied heavily on note cards or the board.</td>
 		<input type="radio" name="presenQty" value="5" required> 5<br> </td>
     
 </table>
+<br>
 <table style="width:100%">
     <tr>
         <th>DISPLAY \\ 50 POINTS</th>
