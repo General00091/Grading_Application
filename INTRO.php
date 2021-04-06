@@ -212,8 +212,7 @@ if ($_POST['engineering'] && (int)$numJudges < 3) {
   <input type="number" name="projectID" required>
   <br><br>
   Type Of Project: <br>
-    <button type="submit" formaction="Engineering.php">Submit to Engineering/Design page</button>
-    <button type="submit" formaction="Experimental.php">Submit to Experimental page</button>
+    <button type="submit" formaction="Redirect.php">Submit</button>
 </form>
 
 </body>
