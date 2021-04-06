@@ -21,7 +21,11 @@
                 "D:\\xampp\\htdocs\\Grading_Application\\",
                 "/y"
             ],
-            "problemMatcher": []
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
     
