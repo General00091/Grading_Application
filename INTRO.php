@@ -5,13 +5,21 @@
     <style>
     form {padding-top: 120px;
     text-align: center;
-    font-size: 30px;}
+    font-size: 30px;
+    }
     input{width: 250px;
       height: 40px;
-      font-size: 30px}
+      font-size: 30px
+    }
     body {
       font-family: Arial, sans-serif;
       background-color: #E0EBE5;
+    }
+    button {
+      text-align: center;
+      font-size: 16px;
+      padding: 15px 32px;
+      margin: 4px 2px;
     }
     </style>
   </head>
@@ -211,7 +219,6 @@ if ($_POST['engineering'] && (int)$numJudges < 3) {
   Project ID:<br>
   <input type="number" name="projectID" required>
   <br><br>
-  Type Of Project: <br>
     <button type="submit" formaction="Redirect.php">Submit</button>
 </form>
 
