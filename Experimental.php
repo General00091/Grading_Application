@@ -65,7 +65,7 @@ echo("projectID: " . $ProjectID);
     mysqli_close($connection);
 ?>
     
-    <form method="POST" action="INTRO.php"> 
+    <form method="POST" action="Calculate.php"> 
     <tr>
         <th>OVERALL IMPRESSION OF THE PROJECT \\ 50 POINTS</th>
     </tr>
@@ -342,7 +342,7 @@ by student and are not copied from the internet. Photos do not show faces of peo
 </td>
     </tr>
 
-        <input type="hidden" name="projectnumber" value="<?php echo $ProjectID?>"> 
+<input type="hidden" name="projectnumber" value="<?php echo $ProjectID?>"> 
 </table>
 <br>
     <input type="submit" name="experimental" value="Submit"></form>

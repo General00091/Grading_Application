@@ -65,7 +65,7 @@ echo("projectID: " . $ProjectID);
     mysqli_close($connection);
 ?>
 
-    <form method="POST" action="INTRO.php"> 
+    <form method="POST" action="Calculate.php"> 
     <tr>
         <th>OVERALL IMPRESSION OF THE DESIGN PROCESS \\ 50 POINTS</th>
         
